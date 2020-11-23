@@ -1,0 +1,79 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="OVERVIEW/Typography" />
+
+# Typography
+Typography can help create clear hierarchies, organize information, and guide users through a product or experience.
+
+## Font sizes
+The following table shows available font sizes along with their line heights and common use cases.
+
+| Name | Font size | Line height | Common uses |
+| ---- | --------- | ----------- | ----------- |
+| H1 | 32 | 40 | Page titles |
+| H2 | 24 | 32 | Section titles |
+| H3 | 20 | 24 | Sub section titles |
+| Paragraph | 16 | 24 | Large wrapping text |
+| Body | 16 | 20 | Default font size |
+| Paragraph small | 14 | 20 | Small wrapping text |
+| Small | 14 | 16 | Contextual text. Often paired with Body bold or H3. |
+| XSmall | 12 | 16 | Labels and contextual text when space is limited |
+| Tiny | 10 | 12 | Non-essential labels where space is very limited |
+
+## Font Families
+
+<br/>
+
+### Proxima Nova
+MX uses Proxima Nova for nearly all of its type. Always default to Proxima Nova whenever possible.
+
+### Menlo
+Menlo should be used sparingly. It is a monospaced font and works great for things like code snippets and technical meta data.
+
+## Font styles
+
+<br/>
+
+### Bold and semibold
+It is common to use bold and semibold font weights in order to establish hierarchy or emphasize a particular piece of text. Font weights H1-H3 use font weight bold. All other "bold" styles use the semibold font weight.
+
+### Tabular
+Tabular fonts allow for a monospaced experience without the need to change font families. Proxima Nova supports the tabular style but not all browsers support the CSS delcaration for tabular styles. Check <a href="https://caniuse.com/?search=font-variant-numeric" target="_blank">Can-I-Use</a> to see current browser support for tabular styles.
+
+Only use tabular styles with `Body` and `Small` font sizes.
+
+## Truncation
+Truncation is typically used for static text or links that exceed the size of their container. Truncated items are represented by an ellipsis `...` and should represent three or more truncated characters in a text string. There must be at least four characters of non-truncated content in a truncated string. Truncated items always include a browser tooltip on hover to show the entire string, name, or phrase that the ellipsis is representing. The only time a browser tooltip does not need to be used is at the end of a truncated paragraph.
+
+Good use cases for truncation include:
+
+- Breadcrumbs
+- Pagination
+- Long URL links
+- Paragraph of text (i.e. a description paragraph)
+- Shortening of a long item name (user- or platform-generated)
+
+Truncation should not be used on page headers, titles, labels, error messages, validation messages, or notifications.
+
+<br/>
+
+### Variations
+There are three types of truncation: front-line, mid-line, and end-line.
+
+| Type | Purpose | Default | Truncated |
+| ---- | ------- | ------- | --------- |
+| Front-line | Used at the beginning of a text string to indicate the text is continued from a previous location. | 123456789 | ...56789 |
+| Mid-line | Used when several text strings have different beginnings and/or endings but the exact same middle characters. Can also be used to shorten a phrase or text string when the end of a string cannot be truncated by an ellipsis. | 123400005678 | 1234...5678 |
+| End-line | Used at the end of a character string or paragraph to indicate that there is more content in another location, to show that the pattern in a sequence continues, or to shorten a long text string. | 123456789 | 12345... |
+
+<br/>
+
+### Show more buttons
+The “Show more” button is used when there is a significant amount of overflow content. Implementing a “Show more” button gives a user the ability to see the content in more digestible chunks, as opposed to all at once. A “Show more” button is used in place of scrolling, gradients, or fades as they are more prominent and actionable. If needed, a “Show less” can be used to again hide the content the user opened.
+
+<video src="/assets/show-more.mp4" type="video/mp4" controls autoPlay loop mute="true"></video>
+
+## Resources
+- <a href="/?path=/story/components-icon-usage--page#pairing-with-text">Pairing text with Icons</a>
+- <a href="https://www.carbondesignsystem.com/patterns/overflow-content/" target="_blank">Carbon Design System / Overflow content</a>
+- <a href="https://www.carbondesignsystem.com/patterns/overflow-content/" target="_blank">Proxima Nova font files (Requires MX Google Drive access)</a>

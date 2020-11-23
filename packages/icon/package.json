@@ -1,0 +1,30 @@
+{
+  "name": "@kyper/icon",
+  "version": "1.4.1",
+  "description": "Kyper Icon",
+  "author": "MX",
+  "homepage": "",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git@gitlab.mx.com:mx/kyper-react.git"
+  },
+  "scripts": {
+    "lint": "eslint lib/*.js"
+  },
+  "peerDependencies": {
+    "@kyper/tokenprovider": "^1.0.0-alpha.0",
+    "mx-design-tokens": "^5.0.0",
+    "prop-types": "^15.7.2",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
+  }
+}

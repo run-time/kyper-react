@@ -1,0 +1,184 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
+import { Text } from './text'
+import withDesignTokens from 'addons/tokens/index.js'
+
+import { FlexContainer } from 'addons/blocks/blocks.js'
+import packageJson from '../package.json'
+import changelog from '../CHANGELOG.md'
+import { useTokens } from '@kyper/tokenprovider'
+
+<Meta
+  component={Text}
+  decorators={[withDesignTokens]}
+  parameters={{ changelog }}
+  title="COMPONENTS/Text"
+/>
+
+# Text
+
+### Installation
+
+`npm install @kyper/text --save`
+
+<PeerDependencies json={packageJson} />
+
+<Canvas>
+  <Story name="H1">
+    <FlexContainer>
+      <Text tag="h1">
+        Heading 1
+      </Text>
+    </FlexContainer>
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story name="H2">
+    <FlexContainer>
+      <Text tag="h2">
+        Heading 2
+      </Text>
+    </FlexContainer>
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story name="H3">
+    <FlexContainer>
+      <Text tag="h3">
+        Heading 3
+      </Text>
+    </FlexContainer>
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story name="Paragraph">
+    <FlexContainer>
+      <Text tag="p">
+        Paragraph
+      </Text>
+    </FlexContainer>
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story name="Body">
+    <FlexContainer>
+      <Text as="Body" tag="p">
+        Body
+      </Text>
+    </FlexContainer>
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story name="Paragraph small">
+    <FlexContainer>
+      <Text as="ParagraphSmall" tag="p">
+        Paragraph Small
+      </Text>
+    </FlexContainer>
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story name="Small">
+    <FlexContainer>
+      <Text as="Small" tag="p">
+        Small
+      </Text>
+    </FlexContainer>
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story name="Tiny">
+    <FlexContainer>
+      <Text as="Tiny" tag="p">
+        Tiny
+      </Text>
+    </FlexContainer>
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story name="Text colors">
+    return (
+      <FlexContainer>
+        <Text tag="p">
+          <Text tag="span">Primary color</Text> <Text color="secondary" tag="span">Secondary color</Text> <Text color="error" tag="span">Error color</Text>
+        </Text>
+      </FlexContainer>
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story name="Bold styling">
+    {() => {
+      const tokens = useTokens()
+      return (
+        <FlexContainer direction="column">
+          <Text style={{marginBottom:tokens.Spacing.Medium}} tag="h2">
+            Heading tags are styled with the `FontWeight.Bold` token style by default
+          </Text>
+          <Text style={{marginBottom:tokens.Spacing.Medium}} tag="p">
+            For smaller text the `bold` prop and the `strong` tag use the `FontWeight.Semibold` token style.
+          </Text>
+          <Text as="Body" style={{marginBottom:tokens.Spacing.Medium}} tag="p">
+            For text the needs emphasis inside a paragraph use the <Text tag="strong">strong</Text> tag for semantic and accessibility reasons. See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/strong#:~:text=The%20HTML%20Strong%20Importance%20Element,the%20contents%20in%20bold%20type." target="_blank">this link</a> for more information on usage.
+          </Text>
+          <Text as="Body" bold tag="p">
+            For all other text that needs to be bolded use the `bold` prop.
+          </Text>
+        </FlexContainer>
+      )
+    }}
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story name="Uppercase styling">
+    {() => {
+      const tokens = useTokens()
+      return (
+        <FlexContainer direction="column">
+          <Text as="Paragraph" style={{marginBottom:tokens.Spacing.Medium}} tag="p">For uppercase styles we add some letter spacing to the Small, XSmall and Tiny font sizes for readability. Other sizes have default letter spacing. Use the <Text tag="strong">`uppercase`</Text> prop so you don't have to worry about adding letter spacing yourself.</Text>
+          <Text as="Small" uppercase>
+            Small Uppercase
+          </Text>
+          <Text as="XSmall" uppercase>
+            XSmall Uppercase
+          </Text>
+          <Text as="Tiny" style={{marginBottom:tokens.Spacing.Medium}} tag="p" uppercase>
+            Tiny Uppercase
+          </Text>
+        </FlexContainer>
+      )
+    }}
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story name="Alternate styling">
+    {() => {
+      const tokens = useTokens()
+      return (
+        <FlexContainer direction="column">
+          <Text as="Paragraph" style={{marginBottom:tokens.Spacing.Medium}} tag="p">You can style any font size as another one using the `as` prop.</Text>
+          <Text as="H3" style={{marginBottom:tokens.Spacing.Medium}} tag="h1">
+            Heading 1 styled as an h3
+          </Text>
+          <Text as="Paragraph" style={{marginBottom:tokens.Spacing.Medium}} tag="p">For any other styles use the `style` prop. This is mostly used for margin and padding.</Text>
+          <Text as="Body" style={{padding:tokens.Spacing.Medium, marginBottom:tokens.Spacing.Medium}} tag="p">
+            Paragraph with margin and padding.
+          </Text>
+        </FlexContainer>
+      )
+    }}
+  </Story>
+</Canvas>
+
+### Props
+
+<ArgsTable of={Text} />

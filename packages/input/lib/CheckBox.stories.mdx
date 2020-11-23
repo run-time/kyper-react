@@ -1,0 +1,41 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
+import { CheckBox } from './input'
+import withDesignTokens from 'addons/tokens/index.js'
+
+import { FlexContainer } from 'addons/blocks/blocks.js'
+import changelog from '../CHANGELOG.md'
+import packageJson from '../package.json'
+
+<Meta
+  component={CheckBox}
+  decorators={[withDesignTokens]}
+  parameters={{ changelog }}
+  title="COMPONENTS/Inputs/CheckBox Input"
+/>
+
+# CheckBox
+### Installation
+
+`npm install @kyper/input --save`
+
+<PeerDependencies json={packageJson} />
+
+<Canvas>
+  <Story name="Basic">
+    <FlexContainer direction="column">
+      <FlexContainer padding={16}>
+        <CheckBox id="foo" name="foo" label="Checkbox Label Right" labelPosition="right" />
+        <CheckBox id="bar" name="bar" label="Checkbox Label Left" />
+      </FlexContainer>
+      <FlexContainer padding={16}>
+        <CheckBox disabled={true} id="disabled1" name="disabled1" label="Disabled" />
+        <CheckBox checked={true} disabled={true} id="disabled2" name="disabled2" label="Disabled" />
+      </FlexContainer>
+    </FlexContainer>
+  </Story>
+</Canvas>
+
+### Props
+Any additional props will be passed down to the native input element.
+
+<ArgsTable of={CheckBox} />

@@ -1,0 +1,28 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="OVERVIEW/Motion" />
+
+# Motion
+Motion can bring the screen to life, guide users through complex experiences, and help move them forward—from here to there, now to next, start to finish—and make progress.
+
+## Easing
+Strictly linear movement appears unnatural to the human eye. Elements on the screen should speed up quickly and slow down smoothly, obeying the physics of a light-weight material. “Easing curves” describe the precise amount of accelerations in motion. We have one easing curve for all standard transitions.
+
+``` cubic-bezier(.475,.425,0,.995) ```
+
+This easing curve can be accessed via the design token: 
+
+``` Core.Easing.Default ```
+
+## Timing
+We have three options for timing. See the table below for information on how to choose the correcting timing for your transition or animation.
+
+| Duration | Token Name | Purpose |
+| -------- | ---------- | ------- |
+| 300ms | Short | Micro-interactions such as fade and switch toggle |
+| 500ms | Med | Eye catching interactions such as modal fade in |
+| 1000ms | Long | For long or infinite animations such as a loading spinner |
+
+## Examples
+
+<video src="/assets/motion-example.mp4" type="video/mp4" controls autoPlay loop mute="true"></video>

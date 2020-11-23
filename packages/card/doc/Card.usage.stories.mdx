@@ -1,0 +1,61 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="COMPONENTS/Card/Usage" />
+
+# Card
+Cards contain content and actions about a single subject.
+
+[Live demo](/?path=/story/components-card-examples--card-default)
+
+![Card preview](/card/doc/assets/card-preview.png)
+
+## Overview
+
+Cards are containers that display content and actions on a single topic.
+
+They should be easy to scan for relevant and actionable information. Elements, like text and images, should be placed on them in a way that clearly indicates hierarchy.
+
+Each card is made up of various content blocks (text, images, links, etc.). All of the blocks, as a whole, are related to a single subject or destination. Content can receive different levels of emphasis, depending on its level of hierarchy.
+
+## Card customization
+
+The following properties can be configured for cards:
+
+- Border radius (4px or 8px)
+- Padding (16px or 24px)
+- Shadow or border stroke
+
+![Card types](/card/doc/assets/card-types.png)
+
+## Card behavior
+<br/>
+
+### Transform
+
+Cards use a container transform transition pattern to reveal additional content.
+
+<video src="/card/doc/assets/card-transform.mp4" type="video/mp4" controls autoPlay loop mute="true"></video>
+
+### Gestures
+
+Gestures should be implemented consistently within a card collection. Frequently used gestures on cards include swipe, pick up and move, and scrolling.
+
+#### Swipe
+
+A swipe gesture can be performed on a single card at a time, anywhere on that card.
+
+It can be used to:
+- Dismiss a card
+- Change the state of a card (such as flagging or archiving it)
+
+<video src="/card/doc/assets/card-swipe.mp4" type="video/mp4" controls autoPlay loop mute="true"></video>
+
+#### Pick up and move
+
+The pick up and move gesture allows users to move and re-order cards in a collection. While cards are being moved the shadow should increase to shadow-high and the active card should always show on top of its siblings.
+
+<video src="/card/doc/assets/card-move.mp4" type="video/mp4" controls autoPlay loop mute="true"></video>
+
+## Resources
+
+- <a href="https://material.io/components/cards#hierarchy-and-placement" target="_blank">Google Material / Cards</a>

@@ -1,0 +1,46 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="OVERVIEW/Naming conventions" />
+
+# Naming Conventions
+
+How we name our variables
+
+## Global/Alias - Explained
+
+The proposed way we will handle variable naming is using a "**global/alias**" convention. Each value will have a global variable. For example, in the case of `$spacing-small: 12px;`, `$spacing-small` is the global variable which is equal to a value of `12px;`. Because `$spacing-small` is a global variable it can also have aliases.
+
+An alias represents a use case for the global variable it is a child of. For example, let's say our buttons have `12px` of padding. In this case, we would want to create an alias like this `$button-padding: $spacing-small;`. Then the button's CSS would look like this: `padding: $button-padding;`.
+
+Aliases should be named so they communicate the use case they represent. When naming an alias we should always begin with the component the alias is related to. Then we state the property that the variable is modifying. Lastly, we state any special modifiers like theme, left, right, etc. For example, if we wanted an alias for a text input's help text top margin the alias name would look like this: `$input-help-text-margin-top`. In this example, "input-help-text" is the component, "margin" is the property, and "top" is the modifier.
+
+One advantage of this approach is that it allows us to change an alias without effecting the global variable. In the button example above, if we wanted to increase the amount of padding we would simply change the value of the alias from `$spacing-small` to `$spacing-med`. This would effectively increase the value of `$button-padding` to `16px` and `$button-padding` would become an alias of `$spacing-med`.
+
+Another advantage of this approach is we can modify the global variable and its aliases will be updated. For example, if we were to increase `$spacing-small` from `12px` to `13px`, all of its aliases would be updated to use the new value of `13px`.
+
+## Examples
+
+Here is a small sample of our spacing constants using the naming convention described above:
+
+```
+$spacing-tiny: 4px;
+$input-help-text-margin-top: $spacing-tiny;
+$input-label-margin-bottom: $spacing-tiny;
+
+// x-small 8px
+$spacing-x-small: 8px;
+$icon-button-icon-margin-right: $spacing-x-small;
+$tag-padding: $spacing-x-small;
+$icon-with-text-margin: $spacing-x-small;
+
+// small 12px
+$spacing-small: 12px;
+$button-padding: $spacing-small;
+$input-padding-top-bottom: $spacing-small;
+
+// med 16px
+$spacing-med: 16px;
+$input-padding-left-right: $spacing-med;
+$input-wrapper-margin-bottom: $spacing-med;
+$table-footer-padding-left-right: $spacing-med;
+```

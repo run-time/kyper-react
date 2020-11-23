@@ -1,0 +1,9 @@
+import { Meta, ArgsTable } from '@storybook/addon-docs/blocks'
+import { DocCodePage } from 'addons/blocks/blocks'
+import { TokenProvider } from '../lib/index'
+import packageJson from '../package.json'
+import changelog from '../CHANGELOG.md'
+
+<Meta component={TokenProvider} title="COMPONENTS/TokenProvider/Interface" />
+
+<DocCodePage argTable={<ArgsTable of={TokenProvider} />} json={packageJson} title="TokenProvider" changelog={changelog} />

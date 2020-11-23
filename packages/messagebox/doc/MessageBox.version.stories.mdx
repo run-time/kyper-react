@@ -1,0 +1,9 @@
+import { Meta, ArgsTable } from '@storybook/addon-docs/blocks'
+import { DocCodePage } from 'addons/blocks/blocks'
+import { MessageBox } from '../lib/index'
+import packageJson from '../package.json'
+import changelog from '../CHANGELOG.md'
+
+<Meta component={MessageBox} title="COMPONENTS/MessageBox/Interface" />
+
+<DocCodePage argTable={<ArgsTable of={MessageBox} />} json={packageJson} title="MessageBox" changelog={changelog} />

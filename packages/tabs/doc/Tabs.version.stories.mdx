@@ -1,0 +1,9 @@
+import { Meta, ArgsTable } from '@storybook/addon-docs/blocks'
+import { DocCodePage } from 'addons/blocks/blocks'
+import { Tabs } from '../lib/index'
+import packageJson from '../package.json'
+import changelog from '../CHANGELOG.md'
+
+<Meta component={Tabs} title="COMPONENTS/Tabs/Interface" />
+
+<DocCodePage argTable={<ArgsTable of={Tabs} />} json={packageJson} title="Tabs" changelog={changelog} />

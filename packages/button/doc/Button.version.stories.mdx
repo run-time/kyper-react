@@ -1,0 +1,18 @@
+import { Meta, ArgsTable } from '@storybook/addon-docs/blocks'
+import { DocCodeHeader, DocCodeDependencies, DocCodeProps, DocCodeChangeLog } from 'addons/blocks/blocks.js'
+import { Button, ButtonGroup } from '../lib/index'
+import packageJson from '../package.json'
+import changelog from '../CHANGELOG.md'
+
+<Meta
+  component={Button}
+  title="COMPONENTS/Button/Interface"
+/>
+
+<>
+<DocCodeHeader argTable={<ArgsTable of={Button} />}  title="Button" />
+<DocCodeDependencies json={packageJson} />
+<DocCodeProps argTable={<ArgsTable of={Button} />} title="Button" />
+<DocCodeProps argTable={<ArgsTable of={ButtonGroup} />} title="ButtonGroup" />
+<DocCodeChangeLog changelog={changelog} />
+</>

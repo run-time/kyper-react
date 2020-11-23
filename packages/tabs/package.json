@@ -1,0 +1,33 @@
+{
+  "name": "@kyper/tabs",
+  "version": "2.0.0",
+  "description": "Tabs",
+  "author": "MX",
+  "homepage": "",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@gitlab.mx.com:mx/kyper-react.git"
+  },
+  "scripts": {
+    "lint": "eslint lib/*.js"
+  },
+  "peerDependencies": {
+    "@kyper/tokenprovider": "^2.0.0",
+    "mx-design-tokens": "^8.1.1",
+    "prop-types": "^15.7.2",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
+  }
+}

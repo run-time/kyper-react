@@ -1,0 +1,9 @@
+import { Meta, ArgsTable } from '@storybook/addon-docs/blocks'
+import { DocCodePage } from 'addons/blocks/blocks'
+import { InstitutionLogo } from '../lib/index'
+import packageJson from '../package.json'
+import changelog from '../CHANGELOG.md'
+
+<Meta component={InstitutionLogo} title="COMPONENTS/InstitutionLogo/Interface" />
+
+<DocCodePage argTable={<ArgsTable of={InstitutionLogo} />} json={packageJson} title="InstitutionLogo" changelog={changelog} />

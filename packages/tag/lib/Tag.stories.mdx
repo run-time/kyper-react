@@ -1,0 +1,73 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
+import { Tag } from './Tag'
+import withDesignTokens from 'addons/tokens/index.js'
+
+import { FlexContainer } from 'addons/blocks/blocks.js'
+import packageJson from '../package.json'
+import changelog from '../CHANGELOG.md'
+
+<Meta
+  component={Tag}
+  decorators={[withDesignTokens]}
+  parameters={{ changelog }}
+  title="COMPONENTS/Tag"
+/>
+
+# Tag
+### Installation
+
+`npm install @kyper/tag --save`
+
+<PeerDependencies json={packageJson} />
+
+### Props
+
+<ArgsTable of={Tag} />
+
+
+<Canvas>
+  <Story name="Neutral">
+    <FlexContainer padding={16}>
+      <Tag title="Neutral"/>
+      <Tag size="small" title="Neutral tag"/>
+    </FlexContainer>
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story name="Primary">
+    <FlexContainer padding={16}>
+      <Tag title="Primary tag" variant="primary"/>
+      <Tag size="small" title="Primary tag small" variant="primary"/>
+    </FlexContainer>
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story name="Success">
+    <FlexContainer padding={16}>
+      <Tag title="Success tag" variant="success"/>
+      <Tag size="small" title="Success tag small" variant="success"/>
+    </FlexContainer>
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story name="Warning">
+    <FlexContainer padding={16}>
+      <Tag title="Warning tag" variant="warning"/>
+      <Tag size="small" title="Warning tag small" variant="warning"/>
+    </FlexContainer>
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story name="Error">
+    <FlexContainer padding={16}>
+      <Tag title="Error tag" variant="error"/>
+      <Tag size="small" title="Error tag small" variant="error"/>
+    </FlexContainer>
+  </Story>
+</Canvas>
+
+

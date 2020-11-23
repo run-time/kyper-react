@@ -1,0 +1,130 @@
+import { useState } from 'react'
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
+import { Select } from './index'
+import { SelectDropDown } from './SelectDropDown'
+import withDesignTokens from 'addons/tokens/index.js'
+
+import { FlexContainer } from 'addons/blocks/blocks.js'
+import packageJson from '../package.json'
+import changelog from '../CHANGELOG.md'
+
+import { states } from './storyData'
+
+<Meta
+  component={Select}
+  decorators={[withDesignTokens]}
+  parameters={{changelog}}
+  title="COMPONENTS/Select/Select"
+/>
+
+# Select
+### Installation
+
+`npm install @kyper/select --save`
+
+<PeerDependencies json={packageJson} />
+
+<Canvas>
+  <Story name="Select">
+    <FlexContainer itemStyles={{ width: 200 }} padding={16}>
+      <Select
+        initialSelectedItem={{ label: 'Florida', value: 'fl'}}
+        items={[
+          { label: 'California', value: 'ca'},
+          { label: 'Florida', value: 'fl'},
+          { label: 'Utah', value: 'ut'},
+          { label: 'Some really long value to test that it truncates', value: 'foo'}
+        ]}
+        label='State'
+        onChange={item => { console.log(item.value)}}
+        showSecondaryLabelBackground={true}
+      />
+      <Select
+        items={[
+          { label: 'California', value: 'ca'},
+          { label: 'Florida', value: 'fl'},
+          { label: 'Utah', value: 'ut'}
+        ]}
+        label='State 2'
+        onChange={item => { console.log(item.value)}}
+        showSecondaryLabelBackground={true}
+      />
+    </FlexContainer>
+  </Story>
+</Canvas>
+
+### Core Props
+<ArgsTable of={Select} />
+
+### DropDown Props
+<ArgsTable of={SelectDropDown} />
+
+
+<Canvas>
+  <Story name="Select Errors">
+    {() => {
+      const [selectedItem, setSelectedItem] = useState(null)
+      return (
+        <FlexContainer itemStyles={{ width: 200 }} padding={16}>
+          <Select
+            errorText={selectedItem && selectedItem.value !== 'fl' ? 'Must select the best state' : null}
+            items={[
+              { label: 'California', value: 'ca'},
+              { label: 'Florida', value: 'fl'},
+              { label: 'Utah', value: 'ut'}
+            ]}
+            label='State 3'
+            onChange={setSelectedItem}
+            showSecondaryLabelBackground={true}
+          />
+        </FlexContainer>
+      )
+    }}
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story name="Select Description">
+    <FlexContainer itemStyles={{ width: 200 }} padding={16}>
+      <Select
+        initialSelectedItem={{ label: 'Florida', value: 'fl'}}
+        items={[
+          { label: 'California', value: 'ca'},
+          { label: 'Florida', value: 'fl'},
+          { label: 'Utah', value: 'ut'},
+        ]}
+        label='State'
+        onChange={item => { console.log(item.value)}}
+        showSecondaryLabelBackground={true}
+        description='Additional information'
+        showDescriptionIcon={true}
+      />
+    </FlexContainer>
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story name="Select Disabled">
+    <FlexContainer itemStyles={{ width: 200 }} padding={16}>
+      <Select
+        initialSelectedItem={{ label: 'Florida', value: 'fl'}}
+        isDisabled={true}
+        items={[
+          { label: 'California', value: 'ca'},
+          { label: 'Florida', value: 'fl'},
+          { label: 'Utah', value: 'ut'},
+        ]}
+        label='State Disabled'
+        onChange={item => { console.log(item.value)}}
+        showSecondaryLabelBackground={true}
+      />
+    </FlexContainer>
+  </Story>
+</Canvas>
+
+
+
+
+
+
+

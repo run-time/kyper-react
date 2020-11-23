@@ -1,0 +1,46 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
+import { Radio } from './input'
+import withDesignTokens from 'addons/tokens/index.js'
+
+import { FlexContainer } from 'addons/blocks/blocks.js'
+import changelog from '../CHANGELOG.md'
+import packageJson from '../package.json'
+
+<Meta
+  component={Radio}
+  decorators={[withDesignTokens]}
+  parameters={{ changelog }}
+  title="COMPONENTS/Inputs/Radio Input"
+/>
+
+# Radio
+### Installation
+
+`npm install @kyper/input --save`
+
+<PeerDependencies json={packageJson} />
+
+<Canvas>
+  <Story name="Basic">
+    <FlexContainer direction="column">
+      <FlexContainer padding={16}>
+        <Radio id="g1-1" label="Option One Label Right" labelPosition="right" name="group1" />
+        <Radio id="g1-2" label="Option Two Label Right" labelPosition="right" name="group1" />
+      </FlexContainer>
+      <FlexContainer padding={16}>
+        <Radio id="g2-1" label="Option One Label Left" name="group2" />
+        <Radio id="g2-2" label="Option Two Label Left" name="group2" />
+      </FlexContainer>
+      <FlexContainer padding={16}>
+        <Radio id="g3-1" disabled={true} label="Disabled Left" name="group3" />
+        <Radio id="g3-2" checked={true} disabled={true} label="Disabled right" name="group3" labelPosition="right"/>
+      </FlexContainer>
+    </FlexContainer>
+  </Story>
+</Canvas>
+
+### Props
+Any additional props will be passed down to the native input element.
+
+<ArgsTable of={Radio} />
+

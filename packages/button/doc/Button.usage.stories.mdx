@@ -1,0 +1,94 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+import { DocStoryContainer } from 'addons/blocks/blocks'
+import { ButtonAll } from '../lib/Button.stories'
+
+<Meta title="COMPONENTS/Button/Usage" />
+
+# Button
+Buttons are used to initialize an action. Button labels express what action will occur when the user interacts with it.
+
+[Live demo](/?path=/story/components-button-examples--button-default)
+
+![Button preview](/button/doc/assets/button-preview.png)
+
+## Overview
+
+Buttons are clickable elements that are used to trigger actions. They communicate calls to action to the user and allow users to interact with pages in a variety of ways. Button labels express what action will occur when the user interacts with it.
+
+#### When to use
+
+Use buttons to communicate actions users can take and to allow users to interact with the page. Each page should have one primary button, and any remaining calls to action should be represented as lower emphasis buttons.
+
+#### When not to use
+
+Do not use buttons as navigational elements. Instead, use links when the desired action is to take the user to a new page.
+
+## Button types
+
+![Button preview](/button/doc/assets/button-variations.png)
+
+| Type | Purpose |
+| ---- | ------- |
+| Primary | For the principal call to action on the page. Primary buttons should only appear once per screen (not including the application header or in a modal dialog). |
+| Destructive | For actions that could have destructive effects on the user’s data (delete, remove, etc.). |
+| Neutral | For less prominent actions; Neutral buttons can be used in isolation or paired with a primary button when there are multiple calls to action. |
+| Transparent | For less pronounced actions; often used in conjunction with a primary button. |
+| Transparent Tertiary | Use when you need to pair a button with a destructive button. |
+| Small Outline | Use when space is limited. Commonly used for filters. |
+| Link | Similar to the transparent button links are used for less pronounced actions but take up less space. Use when space is tight and the action does not require a lot of attention.  |
+
+## Icons in buttons
+
+Icons can be placed next to labels to both clarify an action and call attention to a button. There are certain instances where an icon will suffice in place of a text label, but use icon buttons cautiously.
+
+- Icons should be 16x16px inside of a button
+- Icons can appear to the left or right of the button label
+- Icons used in buttons must be directly related to the action that the user is taking
+- Icons must be the same color value as the text within a button
+
+## Button groups
+A high-emphasis button can be accompanied by medium- and low-emphasis buttons that perform less important actions. Keep in mind that you should only group together calls to action that have a relationship to one another.
+
+Although secondary buttons have less visual prominence because they are less saturated than their primary counterparts, they are still tonally heavy. If your layout requires multiple actions—as is the case with some toolbars, data lists and dashboards—low emphasis buttons (Transparent or Link) may be a better choice.
+
+When grouping buttons space them at 12px apart except for transparent buttons. Transparent buttons are spaced 8px apart. 
+
+[Button group demo](/?path=/story/components-button-examples--button-group-default)
+
+## Buttons in forms
+Form submit buttons should be placed at the bottom of the form and left aligned. If your form needs a cancel button it should be placed to the right of the submit button. 
+
+![Button in form example](/button/doc/assets/button-form-example.png)
+
+## Buttons in modals
+Buttons in modals are right aligned on desktop and are full width on smaller screens. 
+
+![Button in modal example](/button/doc/assets/button-modal-example.png)
+
+## Do's and don'ts
+
+<div class="dd">
+  <div class="left">
+    <img src="/button/doc/assets/button-dd-1-left.png"/>
+    <p>Keep button label text on a single line</p>
+  </div>
+  <div class="right">
+    <img src="/button/doc/assets/button-dd-1-right.png"/>
+    <p>Button label text should not wrap</p>
+  </div>
+</div>
+
+<div class="dd">
+  <div class="left">
+    <img src="/button/doc/assets/button-dd-2-left.png"/>
+    <p>Icon color matches label color</p>
+  </div>
+  <div class="right">
+    <img src="/button/doc/assets/button-dd-2-right.png"/>
+    <p>Icon is not sensible and does not match label color</p>
+  </div>
+</div>
+
+## Resources
+- <a href="https://www.carbondesignsystem.com/components/button/usage" target="_blank">Carbon Design System / Button</a>
+- <a href="https://material.io/components/buttons#usage" target="_blank">Google Material / Button</a>

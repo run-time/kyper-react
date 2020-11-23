@@ -1,0 +1,9 @@
+import { Meta, ArgsTable } from '@storybook/addon-docs/blocks'
+import { DocCodePage } from 'addons/blocks/blocks'
+import { TextArea } from '../lib/index'
+import packageJson from '../package.json'
+import changelog from '../CHANGELOG.md'
+
+<Meta component={TextArea} title="COMPONENTS/TextArea/Interface" />
+
+<DocCodePage argTable={<ArgsTable of={TextArea} />} json={packageJson} title="TextArea" changelog={changelog} />

@@ -1,0 +1,57 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
+import { FocusTrapProvider } from '../lib/FocusTrapProvider'
+import withDesignTokens from 'addons/tokens/index.js'
+
+import { FlexContainer } from 'addons/blocks/blocks.js'
+import packageJson from '../package.json'
+import changelog from '../CHANGELOG.md'
+
+<Meta
+  component={FocusTrapProvider}
+  parameters={{ changelog }}
+  title="STYLE/Accessibility/FocusTrapProvider"
+/>
+
+# FocusTrapProvider
+
+### Installation
+
+`npm install @kyper/a11y --save`
+
+<PeerDependencies json={packageJson} />
+
+### Overview
+
+If your application needs to know when a `FocusTrap` component has captured and ended the focus control, you can use the `FocusTrapProvider` to wrap your application. This includes support for multiple instances of `FocusTrap` at a time.
+
+### Props
+<ArgsTable of={FocusTrapProvider} />
+
+### Usage
+
+```
+import { FocusTrapProvider } from '@kyper/a11y'
+
+class App extends React.Component {
+  _onFocusTrapStart = () => {
+    console.log('Trap Start')
+  }
+
+  _onFocusTrapEnd = () => {
+    console.log('Trap End')
+
+  }
+
+  render() {
+    <FocusTrapProvider onEnd={_onFocusTrapEnd} onStart={this._onFocusTrapStart}>
+      <SomeChildWithFocus />
+    </FocusTrapProvider>
+  }
+}
+```
+
+
+
+
+
+

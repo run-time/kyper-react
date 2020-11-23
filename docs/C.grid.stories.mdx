@@ -1,0 +1,38 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="OVERVIEW/Grid and spacing" />
+
+# 8px Grid and spacing
+It’s fundamental to everything we design. The 8px Grid is the geometric foundation of all the visual elements of Kyper, from typography to columns, boxes, icons, and illustrations. It provides structure and guidance for all creative decision-making.
+
+<video src="/assets/grid-example2.mp4" type="video/mp4" controls autoPlay loop mute="true"></video>
+
+## Overview
+MX uses an 8 px layout grid. All visual assets should align to this grid. There are some cases where it's ok to "split" the grid. 
+
+## Spacing constants
+Spacing refers to either the margin or padding of an object. Spacing should align to the values below.
+
+![spacing constants](/assets/spacing-example.png)
+
+## Spliting the gird
+Splitting is when an assets height or width end at an increment of 4px. In some cases it is ok to space objects at 4px or 12px apart. Typically you will split the grid to allow for proper grouping of assets. See Gestalt's principle of <a href="https://www.interaction-design.org/literature/article/laws-of-proximity-uniform-connectedness-and-continuation-gestalt-principles-2" target="_blank">proximity</a> for more context.
+
+Also, due to font sizing constraints some of our font sizes split the grid. Below are a list of font sizes that have line heights that do not strictly align to an 8px grid.
+
+| Size | Line height |
+| ---- | ----------- |
+| Body | 20px |
+| Paragraph small | 20px |
+| Tiny | 12px |
+
+<br/>
+
+### Examples of splitting the grid
+
+![splitting example](/assets/spacing-splitting-example2.png)
+![splitting example](/assets/spacing-splitting-example.png)
+
+## Resources
+- <a href="https://www.usertesting.com/blog/gestalt-principles" target="_blank">Gestalt principles</a>
+- <a href="https://www.carbondesignsystem.com/guidelines/2x-grid/overview" target="_blank">Carbon Design System / 2x Grid</a>

@@ -1,0 +1,73 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="COMPONENTS/MessageBox/Usage" />
+
+# Message box
+
+Message boxes display prominent messages and related optional actions.
+
+<!-- [Live demo](/?path=/story/components-button-examples--button-default) -->
+
+![Message box preview](/messagebox/doc/assets/message-box-preview.png)
+
+## Overview
+Use notifications to inform users of updates or changes to system status. Communicating with users and providing immediate feedback are important for building trust. While notifications are an effective method of communicating with users, they are disruptive and should be used sparingly.
+
+For more context on when to use each notification type, including modals, refer to the notifications pattern. Carbon only supports inline, toast, and modal notification types, although some product teams also support banners and notification centers.
+
+## Message box types
+
+![Message box types](/messagebox/doc/assets/message-box-types.png)
+
+| Type | Purpose |
+| ---- | ------- |
+| Info | For showing messages that are helpful but not urgent |
+| Error | For showing information that is urgent and should not be overlooked by the user |
+| Success | For showing success messages to clients such as when a form has been submitted successfully. |
+
+## Content
+Notifications provide limited space for content, and therefore the content must be short and concise. A user should be able to quickly scan the notification, be apprised of the situation, and know what to do next.
+
+![message box content](/messagebox/doc/assets/message-box-content.png)
+
+#### Headline
+- The title should be short and descriptive, explaining the most important piece of information.
+- When possible, communicate the main message using just the title.
+- Use a period only if the title is a full sentence.
+
+#### Text
+- Be concise and avoid repeating or paraphrasing the title.
+- Limit content to one or two short sentences.
+- Explain how to resolve the issue by including any troubleshooting actions or next steps. You can include links within the notification body that redirect the user to next steps.
+
+#### Actions
+- Keep labels concise and clearly indicate the action the user can take.
+- Limit action labels to one or two words.
+
+## Dismissal
+Message boxes do not dismiss automatically. They persist on the page until the user dismisses them or takes an action that resolves the notification.
+
+Message boxes that dismiss automatically result in a poor experience for users that are using assitive technologies such as screen zooming. Auto-dismissing is also against WCAG 2.1 guidelines.
+
+A small “x” in the top right corner is used to manually dismiss message boxes. Including the close button is optional and should not be included if it is critical for a user to read or interact with the notification.
+
+![Dismiss message box](/messagebox/doc/assets/dismiss-message-box.png)
+
+## Placement
+Message boxes can be overlayed on the screen or be shown inline. By default the message box should show in the bottom right corner of the screen. If this placement conflicts with your design opt for the top right corner. 
+
+Floating message boxes should be placed at 24px away from the edge of the screen. If you are displaying the message box in the top right corner, it should appear below top bars.
+
+## Motion
+Floating message boxes should slide in from the side of the screen when first appearing and dismiss in the opposite direction. In-line message boxes should use a fade in effect.
+
+<video src="/messagebox/doc/assets/message-box-motion.mp4" type="video/mp4" controls autoPlay loop mute="true"></video>
+
+## Form validation
+Use a message box above the submit button if an error occurs that is not related to a form input such as a session timeout or server error. See <a href="http://localhost:10001/?path=/story/components-input-usage--page#validation-and-errors">validation</a> for more information.
+
+![error message box example](/messagebox/doc/assets/error-message-box.png)
+
+## Resources
+- <a href="https://www.carbondesignsystem.com/components/notification/usage/" target="_blank">Carbon Design System / Notifications</a>
+- <a href="https://material.io/components/banners" target="_blank">Google Material / Banners</a>

@@ -1,0 +1,35 @@
+{
+  "name": "@kyper/avatar",
+  "version": "1.0.0",
+  "description": "Avatar",
+  "author": "MX",
+  "homepage": "",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@gitlab.mx.com:mx/kyper-react.git"
+  },
+  "scripts": {
+    "lint": "eslint lib/*.js"
+  },
+  "peerDependencies": {
+    "@kyper/icon": "^1.0.0",
+    "@kyper/tokenprovider": "^1.0.0",
+    "glamor": "^2.20.40",
+    "mx-design-tokens": "^6.0.2",
+    "prop-types": "^15.7.2",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
+  }
+}

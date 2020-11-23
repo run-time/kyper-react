@@ -1,0 +1,92 @@
+import { useState } from 'react'
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
+import { TextInput } from './input'
+import { Button } from '@kyper/button'
+import withDesignTokens from 'addons/tokens/index.js'
+
+import { FlexContainer } from 'addons/blocks/blocks.js'
+import { HeartFilled, Calendar, CloseCircle, Search } from '@kyper/icon'
+import changelog from '../CHANGELOG.md'
+import packageJson from '../package.json'
+
+<Meta
+  component={TextInput}
+  decorators={[withDesignTokens]}
+  parameters={{ changelog }}
+  title="COMPONENTS/Inputs/Text Input"
+/>
+
+# TextInput
+### Installation
+
+`npm install @kyper/input --save`
+
+<PeerDependencies json={packageJson} />
+
+<Canvas>
+  <Story name="Basic">
+    <FlexContainer direction="column">
+      <FlexContainer padding={16}>
+        <TextInput label="Label" name="label" onChange={(e) => console.log(e.target.value)} showSecondaryLabelBackground={true} />
+        <TextInput disabled={true} label="Disabled" name="disabled" value="foo" showSecondaryLabelBackground={true} />
+      </FlexContainer>
+    </FlexContainer>
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story name="No Labels">
+    <FlexContainer direction="column">
+      <FlexContainer padding={16}>
+        <TextInput name="nolabel" />
+        <TextInput disabled={true} name="nolabel-disabled" value="foo" />
+      </FlexContainer>
+    </FlexContainer>
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story name="Icons">
+    <FlexContainer padding={16}>
+      <TextInput iconLeft={(< HeartFilled />)} label="With Icon" name="left" showSecondaryLabelBackground={true} />
+      <TextInput iconRight={(< Calendar />)} label="With Right Icon" name="right" showSecondaryLabelBackground={true} />
+      <TextInput iconRight={(< Calendar />)} iconLeft={(< HeartFilled />)} label="With Both Icons" name="both" showSecondaryLabelBackground={true} />
+    </FlexContainer>
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story name="Search input">
+    {() => {
+      const [search, setSearch] = useState('');
+      return (
+        <FlexContainer padding={16} direction="column" containerStyles={{width:400}}>
+          <p>For a search field you need to put an aria-label on it for accessibility so screen readers will identify the field correctly.</p>
+          <TextInput onChange={(e) => setSearch(e.target.value)} aria-label="Search" iconLeft={(<Search />)} iconRight={(<Button onClick={() => setSearch('')} variant="transparent" style={{padding: 4, height:'auto'}}><CloseCircle /></Button>)} name="search" placeholder="Search" value={search} />
+        </FlexContainer>
+      )
+    }}
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story name="Descriptions">
+    <FlexContainer padding={16}>
+      <TextInput description="This is the description" label="Description" name="description" showSecondaryLabelBackground={true} />
+      <TextInput description="This is the description" label="Description Icon" name="description-icon" showDescriptionIcon={true} showSecondaryLabelBackground={true} />
+    </FlexContainer>
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story name="Errors">
+    <FlexContainer padding={16}>
+      <TextInput error="This is the error message" label="Error" name="error" showSecondaryLabelBackground={true} />
+      <TextInput error="This is the error message" label="Error Icon" name="error-icon" showErrorIcon={true} showSecondaryLabelBackground={true} />
+    </FlexContainer>
+  </Story>
+</Canvas>
+
+### Props
+<ArgsTable of={TextInput} />
+

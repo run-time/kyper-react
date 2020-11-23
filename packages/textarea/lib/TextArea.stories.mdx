@@ -1,0 +1,40 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
+import { TextArea } from './textarea'
+import withDesignTokens from 'addons/tokens/index.js'
+
+import { FlexContainer } from 'addons/blocks/blocks.js'
+import changelog from '../CHANGELOG.md'
+import packageJson from '../package.json'
+
+<Meta
+  component={TextArea}
+  decorators={[withDesignTokens]}
+  parameters={{ changelog }}
+  title="COMPONENTS/Textarea"
+/>
+
+# TextArea
+### Installation
+
+`npm install @kyper/textarea --save`
+
+<PeerDependencies json={packageJson} />
+
+<Canvas>
+  <Story name="Basic">
+    <FlexContainer direction="column">
+      <FlexContainer padding={16}>
+        <TextArea placeholder="Write your message here..."/>
+        <TextArea description="This is the description" label="Description" name="description" showSecondaryLabelBackground={true} />
+      </FlexContainer>
+      <FlexContainer padding={16}>
+        <TextArea description="This is the description" label="Description Icon" name="description-icon" showDescriptionIcon={true} showSecondaryLabelBackground={true} />
+        <TextArea errorText="This is the error message" label="Error" name="error" showSecondaryLabelBackground={true} />
+      </FlexContainer>
+    </FlexContainer>
+  </Story>
+</Canvas>
+
+### Props
+<ArgsTable of={TextArea} />
+

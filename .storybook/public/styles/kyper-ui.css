@@ -1,0 +1,85 @@
+@font-face {
+  font-family: 'Proxima Nova';
+  font-weight: 400;
+  src: url("https://www.davealger.info/fonts/ProximaNova-Reg.otf"); }
+@font-face {
+  font-family: 'Proxima Nova';
+  font-weight: 600;
+  src: url("https://www.davealger.info/fonts/ProximaNova-Sbold.otf"); }
+@font-face {
+  font-family: 'Proxima Nova';
+  font-weight: 700;
+  src: url("https://www.davealger.info/fonts/ProximaNova-Bold.otf"); }
+/*
+** NOTE: StoryBook generates many styles during the doc generation process
+** this means we have to use "!important" to override injected styles below...
+*/
+body .os-content * {
+  font-family: 'Proxima Nova', sans-serif !important;
+  -webkit-font-smoothing: antialiased !important; }
+body .os-content .sidebar-item {
+  font-size: 16px !important;
+  line-height: 20px !important;
+  margin-right: -5px;
+  padding: 4px 16px !important;
+  width: 100%;
+  user-select: none; }
+body .os-content section.css-0 > div.css-0 > .sidebar-item {
+  padding: 8px 24px 8px 32px !important; }
+body .os-content section.css-0 > div.css-0 > div.css-0 > .sidebar-item {
+  padding: 8px 24px 8px 48px !important; }
+body .os-content .sidebar-subheading {
+  color: #6A7381;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  margin: 40px 16px 8px 12px; }
+body .os-content .sidebar-svg-icon {
+  width: 0px !important;
+  height: 0px !important;
+  margin: 0px !important; }
+body .os-content form {
+  margin-bottom: -12px; }
+
+body.mx-light .os-content .sidebar-item.selected {
+  background: #EAF1FB !important;
+  color: #165ECC !important; }
+body.mx-light .os-content section > .sidebar-item > span {
+  font-size: 16px !important;
+  line-height: 20px !important;
+  margin: 4px 0px !important;
+  color: #121417; }
+body.mx-light .os-content .sidebar-expander {
+  left: initial !important;
+  right: 20px !important;
+  border-left-color: #121417; }
+body.mx-light section[data-title="OVERVIEW"] .sidebar-item > span {
+  font-size: 16px !important;
+  line-height: 20px !important; }
+body.mx-light section[data-title="OVERVIEW"] .sidebar-item.selected > span {
+  background: #EAF1FB !important;
+  color: #165ECC !important; }
+
+body.mx-dark .os-content .sidebar-item.selected {
+  background: #EAF1FB !important;
+  color: #121417 !important; }
+body.mx-dark .os-content section > .sidebar-item > span {
+  font-size: 16px !important;
+  line-height: 20px !important;
+  margin: 4px 0px !important;
+  color: #EAF1FB; }
+body.mx-dark .os-content .sidebar-expander {
+  left: initial !important;
+  right: 20px !important;
+  border-left-color: #EAF1FB; }
+body.mx-dark section[data-title="OVERVIEW"] .sidebar-item > span {
+  font-size: 16px !important;
+  line-height: 20px !important; }
+body.mx-dark section[data-title="OVERVIEW"] .sidebar-item.selected > span {
+  background: #EAF1FB !important;
+  color: #121417 !important; }
+
+/*# sourceMappingURL=kyper-ui.css.map */

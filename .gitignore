@@ -1,0 +1,13 @@
+node_modules/
+
+packages/**/dist
+
+*.log
+
+# Local Netlify folder
+.netlify
+
+compiled_docs
+
+.eslintcache
+.DS_Store

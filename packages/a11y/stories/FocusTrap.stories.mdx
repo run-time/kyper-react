@@ -1,0 +1,122 @@
+import { useState } from 'react'
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
+import { FocusTrap, FocusTrapProvider } from '../lib/index'
+import withDesignTokens from 'addons/tokens/index.js'
+
+import { FlexContainer } from 'addons/blocks/blocks.js'
+import changelog from '../CHANGELOG.md'
+import packageJson from '../package.json'
+
+<Meta
+  component={FocusTrap}
+  decorators={[withDesignTokens]}
+  parameters={{ changelog }}
+  title="STYLE/Accessibility/FocusTrap"
+/>
+
+# FocusTrap 
+### Installation
+
+`npm install @kyper/a11y --save`
+
+<PeerDependencies json={packageJson} />
+
+## Important Note!
+This does not properly function on the Docs page for the time being. Use the Canvas tab to experiment.
+
+<Canvas>
+  <Story name="FocusTrap">
+    {() => {
+      const [enabled, setEnabled] = useState(false)
+      return (
+        <FlexContainer direction="column">
+          <button onClick={() => setEnabled(true)}>Enable</button>
+          {enabled ? (
+            <FocusTrap>
+              <div>
+                <br />
+                <button>Trapped Button 1</button> 
+                <button>Trapped Button 2</button>
+                <br />
+                <br />
+                <button onClick={() => setEnabled(false)}>Disable</button>
+              </div>
+            </FocusTrap>
+          ) : null}
+        </FlexContainer>
+      )
+    }}
+  </Story>
+</Canvas>
+
+### Overview
+Utilize this component when you'd like to trap your focus for something like an accessible modal. Lightweight wrapper around the [focus-trap-react](https://www.npmjs.com/package/focus-trap-react) library. Any additional props will be passed directly to the Library component. 
+
+### Props
+There is an issue with static properties and prop docs compiling on class components.
+<ArgsTable of={FocusTrap} />
+
+<Canvas>
+  <Story name="FocusTrap portalTo">
+    {() => {
+      const [enabled, setEnabled] = useState(false)
+      return (
+        <FlexContainer direction="column">
+          <button onClick={() => setEnabled(true)}>Enable</button>
+          {enabled ? (
+            <FocusTrap portalTo="#portal-test">
+              <div>
+                <br />
+                <button>Trapped Button 1</button> 
+                <button>Trapped Button 2</button>
+                <br />
+                <br />
+                <button onClick={() => setEnabled(false)}>Disable</button>
+              </div>
+            </FocusTrap>
+          ) : null}
+          <div id="portal-test" />
+        </FlexContainer>
+      )
+    }}
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story name="FocusTrap Inception with FocusTrapProvider">
+    {() => {
+      const [enabled, setEnabled] = useState(false)
+      const [childEnabled, setChildEnabled] = useState(false)
+      return (
+        <FocusTrapProvider onEnd={() => { console.log('end')}} onStart={() => console.log('start')}>
+          <FlexContainer direction="column">
+            <button onClick={() => setEnabled(true)}>Enable</button>
+            {enabled ? (
+              <FocusTrap>
+                <div>
+                  <br />
+                  <button onClick={() => setChildEnabled(true)}>Open Trapped Child</button> 
+                  <br />
+                  <br />
+                  <button onClick={() => setEnabled(false)}>Disable</button>
+                  {childEnabled ?(
+                    <FocusTrap>
+                      <div style={{ backgroundColor: 'pink' }}>
+                        <br />
+                        <button>Trapped Child 1</button> 
+                        <button>Trapped Child 2</button>
+                        <br />
+                        <br />
+                        <button onClick={() => setChildEnabled(false)}>Disable Child Trap</button>
+                      </div>
+                    </FocusTrap>
+                  ) : null}
+                </div>
+              </FocusTrap>
+            ) : null}
+          </FlexContainer>
+        </FocusTrapProvider>
+      )
+    }}
+  </Story>
+</Canvas>

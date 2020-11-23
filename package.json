@@ -1,0 +1,87 @@
+{
+  "name": "root",
+  "private": true,
+  "devDependencies": {
+    "@babel/compat-data": "^7.11.0",
+    "@babel/core": "^7.11.0",
+    "@babel/preset-env": "^7.11.0",
+    "@babel/preset-react": "^7.10.4",
+    "@kyper/button": "^1.1.1",
+    "@kyper/icon": "^1.3.0",
+    "@kyper/input": "^1.1.1",
+    "@kyper/text": "^1.1.1",
+    "@kyper/tokenprovider": "^2.0.0",
+    "@storybook/addon-a11y": "^6.0.28",
+    "@storybook/addon-controls": "^6.0.28",
+    "@storybook/addon-docs": "^6.0.28",
+    "@storybook/addon-storysource": "^6.0.28",
+    "@storybook/addon-viewport": "^6.0.28",
+    "@storybook/addons": "^6.0.28",
+    "@storybook/api": "^6.0.28",
+    "@storybook/components": "^6.0.28",
+    "@storybook/core-events": "^6.0.28",
+    "@storybook/react": "^6.0.28",
+    "babel-eslint": "^10.0.3",
+    "babel-jest": "^25.5.1",
+    "babel-loader": "^8.0.6",
+    "copy-to-clipboard": "^3.3.1",
+    "d3": "^6.1.1",
+    "downshift": "^5.4.3",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
+    "eslint": "^6.8.0",
+    "eslint-config-mx": "^2.0.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-loader": "^3.0.3",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jest": "^23.20.0",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-react": "^7.20.5",
+    "eslint-plugin-react-hooks": "^4.0.8",
+    "focus-trap-react": "^7.0.1",
+    "glamor": "^2.20.40",
+    "husky": "^4.2.3",
+    "jest": "^25.5.4",
+    "lerna": "^3.22.1",
+    "lint-staged": "^10.2.11",
+    "mx-design-tokens": "^8.6.1",
+    "prettier": "^1.19.1",
+    "prettier-config-mx": "^1.0.0",
+    "react-markdown": "^4.3.1",
+    "storybook-dark-mode": "^1.0.3",
+    "syncpack": "^5.1.4"
+  },
+  "scripts": {
+    "audit": "cd ./bin && node audit.js",
+    "audit:v": "cd ./bin && node audit.js -v",
+    "create": "cd ./bin && node create.js",
+    "bootstrap": "lerna bootstrap --hoist",
+    "storybook:dev": "start-storybook -p 10001 -s ./.storybook/public,./packages,./docs",
+    "storybook:build": "build-storybook -c .storybook -o compiled_docs -s ./.storybook/public,./packages,./docs",
+    "storybook:docs": "start-storybook --docs -s ./.storybook/public,./packages,./docs",
+    "dev": "npm run storybook:dev",
+    "build:storybook": "npm run storybook:build",
+    "sass": "sass --watch .storybook/public/styles/",
+    "lerna": "lerna",
+    "lint": "eslint ./packages",
+    "syncpack": "syncpack",
+    "test": "lerna bootstrap && jest --env=jsdom",
+    "watch": "jest --env=jsdom --watch --collectCoverage=false --verbose=false"
+  },
+  "jest": {
+    "setupFilesAfterEnv": "<rootDir>/setupTests.js"
+  },
+  "prettier": "prettier-config-mx",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --cache --fix",
+      "prettier --write"
+    ]
+  },
+  "dependencies": {}
+}

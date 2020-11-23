@@ -1,0 +1,25 @@
+{
+  "name": "@kyper/tokenprovider",
+  "version": "2.0.0",
+  "description": "TokenProvider",
+  "author": "MX",
+  "homepage": "",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@gitlab.mx.com:mx/kyper-react.git"
+  },
+  "scripts": {
+    "lint": "eslint lib/*.js"
+  },
+  "peerDependencies": {
+    "mx-design-tokens": "^8.0.0",
+    "prop-types": "^15.7.2",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
+  }
+}

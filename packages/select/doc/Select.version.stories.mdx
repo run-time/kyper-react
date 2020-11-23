@@ -1,0 +1,9 @@
+import { Meta, ArgsTable } from '@storybook/addon-docs/blocks'
+import { DocCodePage } from 'addons/blocks/blocks'
+import { Select } from '../lib/index'
+import packageJson from '../package.json'
+import changelog from '../CHANGELOG.md'
+
+<Meta component={Select} title="COMPONENTS/Select/Interface" />
+
+<DocCodePage argTable={<ArgsTable of={Select} />} json={packageJson} title="Select" changelog={changelog} />

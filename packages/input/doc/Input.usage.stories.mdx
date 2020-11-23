@@ -1,0 +1,63 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="COMPONENTS/Input/Usage" />
+
+# Input
+
+Text inputs enable the user to interact with and input content and data. This component can be used for long and short form entries.
+
+<!-- [Live demo](/?path=/story/components-input-examples--input-default) -->
+
+![input preview](/input/doc/assets/input-preview.png)
+
+## Overview
+There are instances, sometimes in the same form, where you need users to enter both short and long form content. Allow the size of the text input box to reflect the length of the content you expect the user to enter.
+
+Use a text area when you expect the input to be more than one sentence. 
+
+## Default Values
+Where possible, add programmatic assistance. Detect and pre-fill inputs to reduce errors and save time. When the software can’t determine the value that belongs in an input, use auto-complete to make suggestions. 
+
+
+
+## Labels
+Effective form labeling helps users understand what information to enter into a text input. Using placeholder text in lieu of a label is sometimes employed as a space-saving method. However, this is not recommended because it hides context and presents accessibility issues.
+
+**Accessibility best practices for labels**
+- Labels must be visible when an input gets focus.
+- Labels must be announced to the screen reader on focus.
+- Ensure the helper text that appears under an input is read when an assistive technology user stops at an input using ARIA.
+
+## Placeholder text
+Placeholder text provides hints or examples of what to enter. Placeholder text disappears after the user begins entering data into the input and should not contain crucial information. Write the text as a direct statement without punctuation.
+
+![placeholder text example](/input/doc/assets/placeholder-text-example.png)
+
+## Helper text
+Helper text is pertinent information that assists the user in completing a field. Helper text is always available when the input is focused and appears underneath the label. When space allows write the text as full sentences with punctuation.
+
+![help text example](/input/doc/assets/help-text-example.png)
+
+## Optional versus required fields
+All fields in a form are assumed required, with optional fields being tagged as so. It is recommended that an instruction precedes the form stating either “All fields are required” or “All fields are required unless marked optional”.
+
+![optional input example](/input/doc/assets/optional-input-example.png)
+
+## Validation and errors
+We recommend validating the users data before form submission. Use visual cues to guide the user as to where the problem lies within the form. This will help to easily identify the elements that need to be corrected.
+
+The validation should appear when the user has clicked away from the text field. Once the user corrects the errors within the text field, the validation should disappear once the data is rendered as valid.
+
+The validation label below the field should be as informative as possible when describing the issue with the users data. For example, if password limitations require 16 characters, but the user inputs a password with only six characters, the text should read something like, “Password must be at least 16 characters.”
+
+<video src="/input/doc/assets/error-validation.mp4" type="video/mp4" controls autoPlay loop mute="true"></video>
+
+Use a message box above the submit button if an error occurs that is not related to a form input such as a session timeout or server error.
+
+![error message box example](/input/doc/assets/error-message-box.png)
+
+### Error messaging
+Effective error messaging can help the user to understand the problem and how to fix it. First, inform the user what has happened, then provide guidance on next steps or possible resolutions. Inline notifications can be used to state the general problem with the users input, such as “Please input the required fields.” Inline Notifications can occur pre or post submission, depending on the type of data the user is inputting.
+
+## Resources
+- <a href="https://www.carbondesignsystem.com/components/text-input/usage" target="_blank">Carbon Design System / Text Input</a>
